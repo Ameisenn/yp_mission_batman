@@ -14,24 +14,28 @@ $(function(){
 			appendLogMsg('start');
 			$('#speed, #duration').slider('disable');
 			$('#stopImageNumber').spinner('disable');
-			$('.start').attr('disabled', 'true');
-			$('.stop').removeAttr('disabled');
+			$('.start').attr('disabled', 'true');              /* true permet de lancer une seule fois la roulette */ 
+			$('.stop').removeAttr('disabled'); 
 		},
 		slowDownCallback : function() {
 			appendLogMsg('slowdown');
-			$('.stop').attr('disabled', 'true');
+		/*	$('.stop').attr('disabled', 'true'); */
+		
 		},
-		stopCallback : function($stopElm) {
+		/*
+			stopCallback : function($stopElm) {
 			appendLogMsg('stop');
 			$('#speed, #duration').slider('enable');
 			$('#stopImageNumber').spinner('enable');
 			$('.start').removeAttr('disabled');
 			$('.stop').attr('disabled', 'true');
 		}
+		*/
 
 	}
 	var rouletter = $('div.roulette');
-	rouletter.roulette(p);	
+	rouletter.roulette(p);
+	/*	
 	$('.stop').click(function(){
 		var stopImageNumber = $('.stopImageNumber').val();
 		if(stopImageNumber == "") {
@@ -40,14 +44,15 @@ $(function(){
 		rouletter.roulette('stop');	
 	});
 	$('.stop').attr('disabled', 'true');
-	$('.start').click(function(){
-		rouletter.roulette('start');	
+	*/
+	$('.start').on('click.dismiss', function(){
+		rouletter.roulette('start');
 	});
 
 	var updateParamater = function(){
 		p['speed'] = Number($('.speed_param').eq(0).text());
 		p['duration'] = Number($('.duration_param').eq(0).text());
-		p['stopImageNumber'] = Number($('.stop_image_number_param').eq(0).text());
+	/*	p['stopImageNumber'] = Number($('.stop_image_number_param').eq(0).text()); */
 		rouletter.roulette('option', p);	
 	}
 	var updateSpeed = function(speed){
@@ -78,31 +83,33 @@ $(function(){
 	});
 	updateDuration($('#duration').slider('value'));
 
+	
 	var updateStopImageNumber = function(stopImageNumber) {
 		$('.image_sample').children().css('opacity' , 0.2);
 		$('.image_sample').children().filter('[data-value="' + stopImageNumber + '"]').css('opacity' , 1);
 		$('.stop_image_number_param').text(stopImageNumber);
 		updateParamater();
 	}
+	
 
 	$('#stopImageNumber').spinner({
 		spin: function( event, ui ) {
 			var imageNumber = ui.value;
-			if ( ui.value > 6 ) {
+			if ( ui.value > 7 ) {
 				$( this ).spinner( "value", -1 );
-				imageNumber = 0;	
+				imageNumber = -1;	
 				updateStopImageNumber(-1);		
 				return false;
 			} else if ( ui.value < -1 ) {
-				$( this ).spinner( "value", 6 );
-				imageNumber = 6;	
-				updateStopImageNumber(6);		
+				$( this ).spinner( "value", 7 );
+				imageNumber = 7;	
+				updateStopImageNumber(7);		
 				return false;
 			}
 			updateStopImageNumber(imageNumber);		
 		}
 	});
-	$('#stopImageNumber').spinner('value', 0);
+	$('#stopImageNumber').spinner('value', -1);                          /* la valeur -1 est aléatoire ET par défaut */ 
 	updateStopImageNumber($('#stopImageNumber').spinner('value'));		
 
 	$('.image_sample').children().click(function(){
