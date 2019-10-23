@@ -12,11 +12,17 @@
 	</link>
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/ui-lightness/jquery-ui.css">
 
-	<link rel="stylesheet" href="styles-roulette-yp.css">
-	</link>
+	<link rel="stylesheet" href="styles-roulette-yp.css"></link>
+	<link rel="stylesheet" href="page.css"></link>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+	<script src="page.js"></script>
+	<script src="roulette.js"></script>
+	<script src="script-roulette-yp.js"></script>
 </head>
 
 <body>
@@ -26,7 +32,12 @@
 		<div class="page-header"><img src="img/yp.PNG" /></div>
 
 		<div class="row">
-			<div class="span4">
+			<div class="span3">
+				<p class="textFont">
+					Bonjour à toi cher nouvel arrivant YP ! teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeest
+				</p>
+			</div>
+			<div class="span6">
 				<div class="form-group"></div>
 				<div class="roulette_container">
 					<div class="roulette" style="display:none;">
@@ -39,49 +50,8 @@
 						<img src="img/william-macelot.PNG" />
 					</div>
 				</div>
-
-			<div class="btn_container">
-				<!-- DEBUT MODAL -->
-					<div class="container">
-						<div class="modal fade" id="myModal" role="dialog">
-							<div class="modal-dialog">
-
-								<!-- Modal content-->
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
-										<h4 class="modal-title">LE RANDOM MAGIQUE</h4>
-									</div>
-									<div class="modal-body">
-										<label class="param_name" for="email">TON ADRESSE :</label>
-										<input type="email" class="form-control" id="email">
-
-										<!-- Paramètre du Random -->
-										<div class="speed_value param_label">
-											<span class="param_name">SPEED :</span> 
-											<span class="speed_param"></span>
-										</div>
-										<div id="speed"></div>
-
-										<div class="duration_value param_label">
-											<span class="param_name">DURATION :</span> 
-											<span class="duration_param"></span>
-										</div>
-										<div id="duration"></div>
-									</div>
-
-									<div class="modal-footer" data-dismiss="modal">
-										<button class="btn btn-large btn-primary start" >GO !</button>
-									</div>
-								</div>
-
-							</div>
-						</div>
-					</div> 
-				<!--FIN MODAL -->
 				<button type="button" class="btn btn-large btn-primary" data-toggle="modal" data-target="#myModal">START</button>
-				</div>
-			</div>
+
 				<!-- Trigger the modal with a button -->
 				
 				<!--
@@ -98,8 +68,54 @@
 					</div>	
 				-->
 		</div>
+		<div class="span3">
+			<p class="textFont" id="postRoulette">
+				<!-- Bonjour à toi cher nouvel arrivant YP ! teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeest -->
+			</p>
+		</div>
 	</div>
+	
+	<!-- DEBUT MODAL -->
+	<div class="btn_container">
+			<div class="container">
+				<div class="modal fade" id="myModal" role="dialog">
+					<div class="modal-dialog">
 
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">LE RANDOM MAGIQUE</h4>
+							</div>
+							<div class="modal-body">
+								<label class="param_name" for="email">TON ADRESSE :</label>
+								<input type="email" class="form-control" id="email">
+
+								<!-- Paramètre du Random
+								<div class="speed_value param_label">
+									<span class="param_name">SPEED :</span> 
+									<span class="speed_param"></span>
+								</div>
+								<div id="speed"></div>
+
+								<div class="duration_value param_label">
+									<span class="param_name">DURATION :</span> 
+									<span class="duration_param"></span>
+								</div>
+								<div id="duration"></div> -->
+							</div>
+
+							<div class="modal-footer" data-dismiss="modal">
+								<button class="btn btn-large btn-primary start" >GO !</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div> 
+	</div>
+			<!--FIN MODAL -->
+	
 
 	<!-- selection des batmans Feature -->
 
@@ -121,11 +137,6 @@
 								
 						</span>
 						-->
-
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
-	<script src="roulette.js"></script>
-	<script src="script-roulette-yp.js"></script>
 
 </body>
 
