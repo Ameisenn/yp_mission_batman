@@ -11,14 +11,17 @@
 	</link>
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/ui-lightness/jquery-ui.css">
 
-	<link rel="stylesheet" href="styles-roulette-yp.css">
-	</link>
+	<link rel="stylesheet" href="styles-roulette-yp.css"></link>
+	<link rel="stylesheet" href="page.css"></link>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-
-
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+	<script src="page.js"></script>
+	<script src="roulette.js"></script>
+	<script src="script-roulette-yp.js"></script>
 </head>
 
 <body>
@@ -28,17 +31,19 @@
 		
 		<div class="center-box">
 
-			<div class="col">
-				<h2>Ici commence une description</h2>
-				<p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore dolores, animi quis sint
-					explicabo
-					aspernatur numquam eum consequatur dolor nemo molestiae. Eos debitis illum nihil ea ut, velit
-					ipsa
-					enim.</p>
+		
+			<div class="span3">
+				
+			<div class="textFont">
+					<h2>Ici commence une description</h2>
+					<p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore dolores, animi quis sint
+						explicabo
+						</p>
+				</div>
+	
 			</div>
-
-
-			<div class="col">
+			<div class="span6">
+				<div class="form-group">
 				<div class="roulette_container">
 					<div class="roulette" style="display:none;">
 						<img src="img/marie-aure.PNG" />
@@ -50,72 +55,15 @@
 						<img src="img/william-macelot.PNG" />
 					</div>
 				</div>
-			</div>
-
-
-
-			<div class="col">
-				<h2>Ici commence une description</h2>
-				<p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore dolores, animi quis sint
-					explicabo
-					aspernatur numquam eum consequatur dolor nemo molestiae. Eos debitis illum nihil ea ut, velit
-					ipsa
-					enim.</p>
-			</div>
-		</div>
-	</div>
-
-
-	
-	<div class="btn_container">
-		<!-- DEBUT MODAL -->
-		<div class="container">
-			<div class="modal fade" id="myModal" role="dialog">
-				<div class="modal-dialog">
-
-					<!-- Modal content-->
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h4 class="modal-title">LE RANDOM MAGIQUE</h4>
-							<div class=""><img src="img/Batman-removebg-preview.png" /></div>
-						</div>
-						<div class="modal-body">
-							<label class="param_name" for="email">TON ADRESSE :</label>
-							<input type="email" class="form-control" id="email">
-
-							<!-- Paramètre du Random -->
-							<div class="speed_value param_label">
-								<span class="param_name">SPEED :</span>
-								<span class="speed_param"></span>
-							</div>
-							<div id="speed" class="param_label"></div>
-
-							<div class="duration_value param_label">
-								<span class="param_name">DURATION :</span>
-								<span class="duration_param"></span>
-							</div>
-							<div id="duration" class="param_label"></div>
-						</div>
-
-						<div class="modal-footer" >
-							<button class="btn btn-large btn-primary start">GO !</button>
-						</div>
-					</div>
+			
+				<button type="button" class="btn btn-large btn-primary" data-toggle="modal" data-target="#myModal">START</button>
 				</div>
-			</div>
-		</div>
-		<!--FIN MODAL -->
-		<button type="button" class="btn btn-large btn-primary" data-toggle="modal"
-			data-target="#myModal">START</button>
-	</div>
+				
+				
 
-
-
-	</div>
-	<!-- Trigger the modal with a button -->
-
-	<!--
+				<!-- Trigger the modal with a button -->
+				
+				<!--
 					<p>
 					<button class="btn btn-large btn-primary "> START </button>
 					 <button class="stop btn-large btn btn-warning"> STOP </button> 
@@ -128,8 +76,61 @@
 						</div>
 					</div>	
 				-->
+		</div>
+		<div class="span3">
+			<p class="textFont" id="postRoulette">
+				
+					<p class="textFont">
+							Bonjour à toi cher nouvel arrivant YP ! teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeest
+						</p>
+				
+		</div>
+	
+</div>	
 
-
+			<!-- DEBUT MODAL -->
+			<div class="container">
+				<div class="modal fade" id="myModal" role="dialog">
+					<div class="modal-dialog">
+	
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">LE RANDOM MAGIQUE</h4>
+								<div class=""><img src="img/Batman-removebg-preview.png" /></div>
+							</div>
+							<div class="modal-body">
+								<label class="param_name" for="email">TON ADRESSE :</label>
+								<input type="email" class="form-control" id="email">
+	
+								<!-- Paramètre du Random -->
+								<!--
+								<div class="speed_value param_label">
+									<span class="param_name">SPEED :</span>
+									<span class="speed_param"></span>
+								</div>
+								<div id="speed" class="param_label"></div>
+	
+								<div class="duration_value param_label">
+									<span class="param_name">DURATION :</span>
+									<span class="duration_param"></span>
+								</div>
+								<div id="duration" class="param_label"></div>
+							</div>
+							-->
+	
+							<div class="modal-footer" >
+								<button class="btn btn-large btn-primary start" data-dismiss="modal">GO !</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		
+			<!--FIN MODAL -->
+	
 
 	<!-- selection des batmans Feature -->
 
@@ -151,11 +152,6 @@
 								
 						</span>
 						-->
-
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
-	<script src="roulette.js"></script>
-	<script src="script-roulette-yp.js"></script>
 
 </body>
 

@@ -1,0 +1,3 @@
+function postRouletteTextUpdate() {
+    alert("test");
+}

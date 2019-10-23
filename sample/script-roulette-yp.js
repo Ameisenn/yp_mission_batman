@@ -25,11 +25,15 @@ $(function(){
 	rouletter.roulette(p);
 	$('.start').on('click.dismiss', function(){
 		rouletter.roulette('start');
+		postRouletteTextUpdate();
 	});
 
 	var updateParamater = function(){
-		p['speed'] = Number($('.speed_param').eq(0).text());
-		p['duration'] = Number($('.duration_param').eq(0).text());
+		/* p['speed'] = Number($('.speed_param').eq(0).text());
+		p['duration'] = Number($('.duration_param').eq(0).text()); */
+		p['speed'] = 20; //Fixé en dur 
+		p['duration'] = 1;
+	/*	p['stopImageNumber'] = Number($('.stop_image_number_param').eq(0).text()); */
 		rouletter.roulette('option', p);	
 	}
 	var updateSpeed = function(speed){
@@ -77,7 +81,7 @@ $(function(){
 			updateStopImageNumber(imageNumber);
 		}
 	});
-	
+
 	$('#stopImageNumber').spinner('value', -1);                          /* la valeur -1 est aléatoire ET par défaut */ 
 	updateStopImageNumber($('#stopImageNumber').spinner('value'));		
 	
