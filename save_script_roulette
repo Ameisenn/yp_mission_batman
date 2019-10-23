@@ -7,22 +7,44 @@ $(function(){
 		$('#msg')
 	.append('<p class="muted">' + msg + '</p>')
 	.scrollTop(100000000);
-	}
 
+	}
 	var p = {
-		startCallback : function() {							/* fonction d'appel des parametres de la roulette */ 
+		startCallback : function() {
 			appendLogMsg('start');
-			$('#speed, #duration').slider('disable');			
+			$('#speed, #duration').slider('disable');
 			$('#stopImageNumber').spinner('disable');
-			$('.start').attr('disabled',);              /* true permet de lancer une seule fois la roulette */ 
+			$('.start').attr('disabled', 'true');              /* true permet de lancer une seule fois la roulette */ 
 			$('.stop').removeAttr('disabled'); 
 		},
 		slowDownCallback : function() {
 			appendLogMsg('slowdown');
+		/*	$('.stop').attr('disabled', 'true'); */
+		
 		},
+		/*
+			stopCallback : function($stopElm) {
+			appendLogMsg('stop');
+			$('#speed, #duration').slider('enable');
+			$('#stopImageNumber').spinner('enable');
+			$('.start').removeAttr('disabled');
+			$('.stop').attr('disabled', 'true');
+		}
+		*/
+
 	}
 	var rouletter = $('div.roulette');
 	rouletter.roulette(p);
+	/*	
+	$('.stop').click(function(){
+		var stopImageNumber = $('.stopImageNumber').val();
+		if(stopImageNumber == "") {
+			stopImageNumber = null;
+		}
+		rouletter.roulette('stop');	
+	});
+	$('.stop').attr('disabled', 'true');
+	*/
 	$('.start').on('click.dismiss', function(){
 		rouletter.roulette('start');
 	});
@@ -30,6 +52,7 @@ $(function(){
 	var updateParamater = function(){
 		p['speed'] = Number($('.speed_param').eq(0).text());
 		p['duration'] = Number($('.duration_param').eq(0).text());
+	/*	p['stopImageNumber'] = Number($('.stop_image_number_param').eq(0).text()); */
 		rouletter.roulette('option', p);	
 	}
 	var updateSpeed = function(speed){
@@ -51,14 +74,23 @@ $(function(){
 	}
 	$('#duration').slider({
 		min: 2,
-		max: 15,
-		value : 5,
+		max: 10,
+		value : 3,
 		slide: function( event, ui ) {
 			updateDuration(ui.value);
 			updateParamater();
 		}
 	});
 	updateDuration($('#duration').slider('value'));
+
+	
+	var updateStopImageNumber = function(stopImageNumber) {
+		$('.image_sample').children().css('opacity' , 0.2);
+		$('.image_sample').children().filter('[data-value="' + stopImageNumber + '"]').css('opacity' , 1);
+		$('.stop_image_number_param').text(stopImageNumber);
+		updateParamater();
+	}
+	
 
 	$('#stopImageNumber').spinner({
 		spin: function( event, ui ) {
@@ -75,13 +107,16 @@ $(function(){
 				return false;
 			}
 			updateStopImageNumber(imageNumber);
+					
 		}
 	});
-	
 	$('#stopImageNumber').spinner('value', -1);                          /* la valeur -1 est aléatoire ET par défaut */ 
 	updateStopImageNumber($('#stopImageNumber').spinner('value'));		
-	
-	
 
+	$('.image_sample').children().click(function(){
+		var stopImageNumber = $(this).attr('data-value');
+		$('#stopImageNumber').spinner('value', stopImageNumber);
+		updateStopImageNumber(stopImageNumber);
+	});
 });
 

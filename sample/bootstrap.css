@@ -263,10 +263,7 @@ a:focus {
           border-radius: 500px;
 }
 
-.row {
-  margin-left: -20px;
-  *zoom: 1;
-}
+
 
 .row:before,
 .row:after {
@@ -803,11 +800,6 @@ h4 small {
   font-size: 14px;
 }
 
-.page-header {
-  padding-bottom: 9px;
-  margin: 20px 0 30px;
-  border-bottom: 1px solid #eeeeee;
-}
 
 ul,
 ol {
