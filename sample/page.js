@@ -1,3 +1,4 @@
 function postRouletteTextUpdate() {
-    alert("test");
+    alert("cliquer sur OK si vous êtes OK !");
 }
+
