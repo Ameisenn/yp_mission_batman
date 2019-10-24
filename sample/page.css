@@ -11,3 +11,13 @@
     text-transform: none;
     word-wrap: break-word;
     }
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-container > div {
+
+}
