@@ -1,0 +1,24 @@
+{
+	"list" : [
+		{
+			"id" : 0,
+			"name" : "Bruce"
+		},
+		{
+			"id" : 1,
+			"name" : "Arboncle"
+		},
+		{
+			"id" : 2,
+			"name" : "Damu"
+		},
+		{
+			"id" : 3,
+			"name" : "Purin"
+		},
+		{
+			"id" : 4,
+			"name" : "Antigone"
+		}
+	]
+}
